@@ -2,7 +2,7 @@
 
 ## Details
 
-To send out invoices to my freelance clients, I had to manually edit an Illustrator template and mail it to them. By means of this project, I am able to create invoices in Contentful and only send the link the client.
+To send out invoices to my freelance clients, I had to manually edit an Illustrator PDF template and mail it to them. By means of this project, I am able to create invoices in Contentful and only send the link to the client.
 
 ## Features
 
