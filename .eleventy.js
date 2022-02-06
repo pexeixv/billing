@@ -25,6 +25,7 @@ module.exports = eleventyConfig => {
     eleventyConfig.addPassthroughCopy('./src/js')
     eleventyConfig.addPassthroughCopy('./src/img')
     eleventyConfig.addPassthroughCopy('./_redirects')
+    eleventyConfig.addPassthroughCopy('./src/robots.txt')
     eleventyConfig.addFilter('particularsToJson', particularsToJson)
     eleventyConfig.addFilter('subTotal', subTotal)
     return {
