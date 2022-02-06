@@ -10,9 +10,9 @@ const particularsToJson = array => {
     return newArray
 }
 
-const subTotal = array =>{
+const subTotal = array => {
     let sum = 0
-    array.forEach(string=>{
+    array.forEach(string => {
         const splitString = string.split('|')
         const price = splitString[1].trim()
         sum += parseInt(price)
@@ -24,6 +24,7 @@ module.exports = eleventyConfig => {
     eleventyConfig.addPassthroughCopy('./src/css')
     eleventyConfig.addPassthroughCopy('./src/js')
     eleventyConfig.addPassthroughCopy('./src/img')
+    eleventyConfig.addPassthroughCopy('./_redirects')
     eleventyConfig.addFilter('particularsToJson', particularsToJson)
     eleventyConfig.addFilter('subTotal', subTotal)
     return {
