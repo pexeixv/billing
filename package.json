@@ -1,7 +1,8 @@
 {
   "scripts": {
-    "tw": "npx tailwindcss -i ./css/tailwind.css -o ./css/styles.css",
-    "tww": "npx tailwindcss -i ./css/tailwind.css -o ./css/styles.css -w"
+    "tw": "npx tailwindcss -i ./src/css/tailwind.css -o ./src/css/styles.css",
+    "twm": "npx tailwindcss -i ./src/css/tailwind.css -o ./src/css/styles.css -m",
+    "tww": "npx tailwindcss -i ./src/css/tailwind.css -o ./src/css/styles.css -w"
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0",
