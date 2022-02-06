@@ -14,8 +14,12 @@ To sent out invoices to my freelance clients, I had to manually edit an Illustra
 
 ## Demo invoices
 
-- [B22020601](https://bills.gavinpereira.in/B22020601) - An invoice that has no discount and it paid
-- [B22020602](https://bills.gavinpereira.in/B22020602) - An invoice that has discount and it not paid yet
+- [B22020601](https://bills.gavinpereira.in/B22020601) - An invoice that has no discount and is paid
+- [B22020602](https://bills.gavinpereira.in/B22020602) - An invoice that has discount and is not paid yet
+
+## Note
+
+If you try visiting the index page, it will show a 'Lost your way?' page. This is done deliberately, as the clients will never have to reach to the index page.
 
 ## License
 
