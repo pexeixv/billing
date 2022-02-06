@@ -1,7 +1,14 @@
 module.exports = {
-  content: [],
+  content: [
+    './**/*.{html,njk,js}',
+    './*.{html,njk.js}'
+  ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'lato': ['Lato', 'sans-serif']
+      }
+    }
   },
   plugins: [],
 }

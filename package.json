@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "tw": "npx tailwindcss -i ./css/tailwind.css -o ./css/styles.css",
+    "tww": "npx tailwindcss -i ./css/tailwind.css -o ./css/styles.css -w"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.6",
+    "tailwindcss": "^3.0.18"
+  }
+}
