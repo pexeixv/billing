@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Billing &bull; Gavin Pereira</title>
+    <title>Bills &bull; Gavin Pereira</title>
     <link rel="shortcut icon" href="//gavinpereira.in/img/fav/favicon.ico" type="image/x-icon">
 </head>
 
@@ -18,9 +18,9 @@
 
     <section class="bg-neutral-300 min-h-screen py-10 print:py-0">
         <main
-            class="min-h-[70vh] bg-white shadow-xl w-[90%] max-w-[700px] rounded-lg mx-auto overflow-hidden py-10 px-10 print:shadow-none">
+            class="min-h-[70vh] bg-white shadow-xl w-[90%] max-w-[700px] rounded-lg mx-auto overflow-hidden print:shadow-none">
 
-            <div id="printableArea">
+            <div id="printableArea" class="p-10 bg-white">
                 <div class="h-1 my-1 opacity-30 border-b-2 border-neutral-500 border-dashed"></div>
                 <div
                     class="flex flex-col lg:flex-row print:flex-row lg:divide-x-2 print:divide-x-2 divide-neutral-400 py-2 lg:py-5">
@@ -39,15 +39,24 @@
                     </div>
                 </div>
                 <div class="h-1 my-1 opacity-30 border-b-2 border-neutral-500 border-dashed"> </div>
-                <h1 class="text-3xl font-black text-center uppercase py-3">
+                <h1 class="text-3xl font-black text-center uppercase pt-3">
                     <span class="relative top-1">***</span>
-                    <span>Receipt</span>
+                    <span>Bill</span>
                     <span class="relative top-1">***</span>
                 </h1>
+                <div class="text-xs font-mono text-center pb-3 pt-1 before:content-['#'] after:content-['#']"
+                    id="receiptId">B22020601</div>
                 <div class="h-1 my-1 opacity-30 border-b-2 border-neutral-500 border-dashed"> </div>
-                <div class="flex items-center justify-between flex-wrap">
-                    <span class="text-center py-2">To: <span class="font-bold text-lg">Mr. John Appleseed</span></span>
-                    <span class="text-center py-2">Date: <span class="font-bold text-lg">22/02/2022</span></span>
+                <div class="flex items-center justify-between flex-col md:flex-row" id="nameDateRow">
+                    <div class="text-center py-2">
+                        <span>To:</span>
+                        <span class="font-bold text-lg">Mr. John
+                            Appleseed</span>
+                    </div>
+                    <div class="text-center py-2">
+                        <span>Date:</span>
+                        <span class="font-bold text-lg">22/02/2022</span>
+                    </div>
                 </div>
                 <div class="h-1 my-1 opacity-30 border-b-2 border-neutral-500 border-dashed"> </div>
                 <div class="flex items-center justify-between pt-10 pb-3">
@@ -115,11 +124,17 @@
 
 
         <div class="print:hidden pt-10 flex items-center justify-center gap-5">
-            <button onclick="printDiv('printableArea')" class=" py-3 px-5 bg-neutral-600 hover:bg-neutral-900 text-white rounded transition-colors font-black
+            <button onclick="printBill('#printableArea')" class=" py-3 px-5 bg-neutral-600 hover:bg-neutral-900 text-white rounded transition-colors font-black
                 duration-200 uppercase">
-                Print
+                Print as PDF
             </button>
+            <button onclick="saveBill('#printableArea')" class=" py-3 px-5 bg-neutral-600 hover:bg-neutral-900 text-white rounded transition-colors font-black
+                duration-200 uppercase">
+                Save as image
+            </button>
+
         </div>
+
 
 
 
@@ -145,16 +160,27 @@
     }
 </script>
 
+<script src="./vendor/dom-to-image@2.6.js"></script>
+<script src="./vendor/fileSaver@2.0.4.js"></script>
 <script>
-    // Print only a certain div
-    // https://stackoverflow.com/a/7532581/13750705
-    const printDiv = divName => {
-        const printContents = document.getElementById(divName).innerHTML
+    const printBill = selector => {
+        const printContents = document.querySelector(selector).innerHTML
         const originalContents = document.body.innerHTML
         document.body.innerHTML = printContents
         window.print()
         document.body.innerHTML = originalContents
     }
+
+    const saveBill = selector => {
+        const nameDateRow = document.querySelector('#nameDateRow')
+        const receiptId = document.querySelector('#receiptId').innerText
+        const fileName = `${receiptId}.png`
+        domtoimage.toBlob(document.querySelector(selector))
+            .then(function (blob) {
+                window.saveAs(blob, fileName)
+            })
+    }
+
 </script>
 
 </html>
