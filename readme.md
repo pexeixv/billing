@@ -1,4 +1,8 @@
-# Billing by [Gavin Pereira](https://gavinpereira.in)
+<center>
+    <img src="src/img/preview.jpg"></img>
+</center>
+
+---
 
 ## Details
 
