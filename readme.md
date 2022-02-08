@@ -1,6 +1,4 @@
-<center>
-    <img src="src/img/preview.jpg"></img>
-</center>
+![](/src/img/wordmark.png)
 
 ---
 
