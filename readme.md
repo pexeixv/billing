@@ -6,7 +6,7 @@
 
 ## Details
 
-To sent out invoices to my freelance clients, I had to manually edit an Illustrator template and mail it to them. By means of this project, I am able to create invoices in Contentful and only send the link the client.
+To send out invoices to my freelance clients, I had to manually edit a PDF template in Illustrator and mail it to them. By means of this project, I am able to create invoices in Contentful and only send the link to the client.
 
 ## Features
 
@@ -27,7 +27,7 @@ If you try visiting the index page, it will show a 'Lost your way?' page. This i
 
 ## License
 
-Although I created this project for myself to use, I am open to implementing it for fellow freelancers at a very nominal fee. It's open-source, so if you can get it working on your own, please accredit me.
+Although I created this project for myself to use, I am open to implementing it for other fellow freelancers at a very nominal fee. It's open-source, so if you can get it working on your own, please accredit me.
 
 ## Time spent
 
