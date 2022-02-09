@@ -64,10 +64,10 @@ permalink: "{{ bill.receiptId }}/"
                         <span class="font-black text-lg">Amount</span>
                     </div>
 
-                    {% for part in bill.particulars | particularsToJson %}
+                    {% for part in bill.particulars %}
                         <div class="flex items-center justify-between pb-2">
-                            <span class="text-sm">{{part.particular}}</span>
-                            <span class="text-sm before:content-['₹_']">{{part.price}}</span>
+                            <span class="text-sm">{{part.key}}</span>
+                            <span class="text-sm before:content-['₹_']">{{part.value}}</span>
                         </div>
                     {% endfor %}
 
