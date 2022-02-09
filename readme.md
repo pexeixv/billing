@@ -16,8 +16,8 @@ To send out invoices to my freelance clients, I had to manually edit a PDF templ
 
 ## Demo invoices
 
-- [B22020601](https://bills.gavinpereira.in/B22020601) - An invoice that has no discount and is paid
-- [B22020602](https://bills.gavinpereira.in/B22020602) - An invoice that has discount and is not paid yet
+- [D22020601](https://bills.gavinpereira.in/d22020601) - An invoice that has no discount and is paid
+- [D22020602](https://bills.gavinpereira.in/d22020602) - An invoice that has discount and is not paid yet
 
 ## Note
 
