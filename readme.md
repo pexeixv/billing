@@ -26,6 +26,7 @@ If you try visiting the index page, it will show a 'Lost your way?' page. This i
 ## License
 
 Although I created this project for myself to use, I am open to implementing it for other fellow freelancers at a very nominal fee. It's open-source, so if you can get it working on your own, please accredit me.
+Licensed under [GNU GPLv3](LICENSE).
 
 ## Time spent
 
