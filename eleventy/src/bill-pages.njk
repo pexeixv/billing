@@ -3,7 +3,7 @@ pagination:
     data: bills
     size: 1
     alias: bill
-permalink: "{{ bill.receiptId }}/"
+permalink: "{{ bill.receiptId.current }}/"
 
 --- 
 
@@ -13,7 +13,7 @@ permalink: "{{ bill.receiptId }}/"
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{{bill.receiptId}} &bull; Gavin Pereira</title>
+        <title>{{bill.receiptId.current}} &bull; Gavin Pereira</title>
         <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="/css/styles.css">
     </head>
@@ -46,7 +46,7 @@ permalink: "{{ bill.receiptId }}/"
                         <span>Bill</span>
                         <span class="relative top-1">***</span>
                     </h1>
-                    <div class="text-xs font-mono text-center pb-3 pt-1 before:content-['#'] after:content-['#']" id="receiptId">{{bill.receiptId }}</div>
+                    <div class="text-xs font-mono text-center pb-3 pt-1 before:content-['#'] after:content-['#']" id="receiptId">{{bill.receiptId.current }}</div>
                     <div class="h-1 my-1 opacity-30 border-b-2 border-neutral-500 border-dashed"></div>
                     <div class="flex items-center justify-between flex-col md:flex-row" id="nameDateRow">
                         <div class="text-center py-2">
@@ -64,14 +64,14 @@ permalink: "{{ bill.receiptId }}/"
                         <span class="font-black text-lg">Amount</span>
                     </div>
 
-                    {% for part in bill.particulars %}
+                    {% for item in bill.items %}
                         <div class="flex items-center justify-between pb-2">
-                            <span class="text-sm">{{part.key}}</span>
-                            <span class="text-sm before:content-['₹_']">{{part.value}}</span>
+                            <span class="text-sm">{{item.itemName}}</span>
+                            <span class="text-sm before:content-['₹_']">{{item.amount}}</span>
                         </div>
                     {% endfor %}
 
-                    {% set subTotal = bill.particulars | subTotal %}
+                    {% set subTotal = bill.items | subTotal %}
 
                     {% if bill.discount %}
                         <div class="h-1 my-1 opacity-30 border-b-2 border-neutral-500 border-dashed"></div>

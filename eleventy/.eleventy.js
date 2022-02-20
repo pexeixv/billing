@@ -1,4 +1,4 @@
-const subTotal = array => array.reduce((a, b) => a + parseInt(b.value), 0)
+const subTotal = array => array.reduce((a, b) => a + parseInt(b.amount), 0)
 
 module.exports = eleventyConfig => {
     eleventyConfig.addPassthroughCopy('./src/css')
