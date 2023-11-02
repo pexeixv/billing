@@ -2,4 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
+
+[data-copy] {
+  cursor: pointer;
+  position: relative;
+}
+
+[data-copy]:hover::after {
+  opacity: 1;
+}
+
+[data-copy]::after {
+  position: absolute;
+  content: "Click to copy";
+  font-size: 0.65rem;
+  padding: 2px 4px;
+  background: black;
+  border-radius: 3px;
+  color: white;
+  white-space: nowrap;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 110%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms;
+}
